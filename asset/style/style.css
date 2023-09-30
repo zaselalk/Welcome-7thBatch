@@ -5,14 +5,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-image: linear-gradient(
+      135deg,
+      rgb(34, 195, 88, 0.9) 0%,
+      rgb(4, 11, 49, 0.8) 100%
+    ),
+    url("/images/faculty.jpg");
+}
 .hidden {
   display: none;
+}
+
+.peocock {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  z-index: -1;
 }
 
 main {
   width: 100%;
   height: 100vh;
-  background-image: radial-gradient(#007ea7, #007ea7, #4361ee);
+  /* background: rgb(34, 193, 195); */
+  /* background: linear-gradient(135deg, rgb(34, 195, 88) 0%, rgb(4, 11, 49) 100%); */
+  /* background-image: radial-gradient(#007ea7, #007ea7, #4361ee); */
+  /* background-image: radial-gradient(#003153, #fcd04a, #000080); */
   position: relative;
   overflow: hidden;
 }
@@ -20,13 +41,13 @@ main {
 main > h1,
 main > h2 {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 5vw;
+  font-size: 8vw;
   opacity: 0;
   text-shadow: 0 0 10px white;
 }
