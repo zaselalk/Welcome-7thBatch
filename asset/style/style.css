@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient(#007ea7, #007ea7, #4361ee);
+  position: relative;
+  overflow: hidden;
+}
+
+main > h1,
+main > h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 5vw;
+  opacity: 0;
+  text-shadow: 0 0 10px white;
+}
+
+main > h2 {
+  animation: text1 linear forwards 3s;
+}
+
+main > h2:nth-of-type(1) {
+  animation-delay: 1s;
+}
+
+main > h2:nth-of-type(2) {
+  animation-delay: 4s;
+}
+
+main > h2:nth-of-type(3) {
+  animation-delay: 7s;
+}
+
+main > h1 {
+  width: 90%;
+  display: flex;
+  font-size: 2vw;
+  justify-content: center;
+  opacity: 1;
+}
+
+main > h1 > strong:nth-of-type(1) {
+  transform: translateX(-1000px);
+  animation: st1 linear 1s 9s forwards;
+}
+
+main > h1 > strong:nth-of-type(2) {
+  transform: translateY(-1000px);
+  animation: st2 linear forwards 1s 10s;
+}
+
+main > h1 > strong:nth-of-type(3) {
+  opacity: 0;
+  animation: st3 linear forwards 1s 11s;
+}
+
+#resource {
+  width: 100%;
+  height: 100vh;
+  padding: 20%;
+}
+
+.resource-headline {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 8vw;
+  text-align: center;
+  margin-bottom: 10%;
+  color: aliceblue;
+}
+
+.resource-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-item {
+  margin: 0.4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #023e8a;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.common {
+  background-color: #03045e;
+}
+
+@keyframes text1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+    filter: blur(10px);
+  }
+  30%,
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    filter: blur(10px);
+  }
+}
+
+@keyframes st1 {
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes st2 {
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes st3 {
+  to {
+    opacity: 1;
+  }
+}
