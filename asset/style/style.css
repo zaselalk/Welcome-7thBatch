@@ -55,29 +55,29 @@ main > h2 {
 
 main > h2:nth-of-type(1) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 8s;
+  animation-delay: 2s;
 }
 
 main > h2:nth-of-type(2) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 11s;
+  animation-delay: 5s;
 }
 
 main > h2:nth-of-type(3) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 14s;
+  animation-delay: 8s;
 }
 main > h2:nth-of-type(4) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 19s;
+  animation-delay: 10s;
 }
 main > h2:nth-of-type(5) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 22s;
+  animation-delay: 13s;
 }
 main > h2:nth-of-type(6) {
   animation: textAnimation1 linear forwards 3s;
-  animation-delay: 25s;
+  animation-delay: 15s;
 }
 
 main > h1 {
@@ -86,21 +86,6 @@ main > h1 {
   font-size: 2vw;
   justify-content: center;
   opacity: 1;
-}
-
-main > h1 > strong:nth-of-type(1) {
-  transform: translateX(-1000px);
-  animation: st1 linear 1s 9s forwards;
-}
-
-main > h1 > strong:nth-of-type(2) {
-  transform: translateY(-1000px);
-  animation: st2 linear forwards 1s 10s;
-}
-
-main > h1 > strong:nth-of-type(3) {
-  opacity: 0;
-  animation: st3 linear forwards 1s 11s;
 }
 
 #resource {
@@ -122,17 +107,6 @@ main > h1 > strong:nth-of-type(3) {
   display: flex;
   flex-direction: column;
 }
-
-/* .resource-item {
-  margin: 0.4rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  background-color: #023e8a;
-  border-radius: 5px;
-  color: aliceblue;
-} */
 
 .resource-item {
   margin: 0.4rem 0;
@@ -237,5 +211,20 @@ main > h1 > strong:nth-of-type(3) {
   }
   20% {
     transform: translateY(-20px);
+  }
+}
+
+/* Breaking point that only for min width 728px */
+
+@media only screen and (min-width: 728px) {
+  .resource-headline {
+    font-size: 4vw;
+  }
+  #resource {
+    padding: 2%;
+  }
+
+  .resource-headline {
+    margin-bottom: 10px;
   }
 }
