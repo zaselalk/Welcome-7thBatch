@@ -5,16 +5,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing web</title>
+  <title>Welcome</title>
   <link rel="stylesheet" href="asset/style/style.css">
   <script src="asset/js/script.js" defer></script>
 </head>
 
 <body>
   <main>
-    <h2>Melika</h2>
-    <h2>Haqshenas</h2>
-    <h2>Web developer</h2>
+
+
+    <h2>අභිමානවත් සරසවියක</h2>
+    <h2>නුතන පුනරාගමනය</h2>
+    <h2>සත්වන තාරුණ්‍ය</h2>
+
+    <img src="./images/peocock.svg" class="peocock">
+
+    <div id="container">
+      <span id="text1"></span>
+      <span id="text2"></span>
+    </div>
+
+    <svg id="filters">
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 1
+                                                            0 1 0 0 1
+                                                            0 0 1 0 1
+                                                            0 0 0 1 0" />
+        </filter>
+      </defs>
+    </svg>
+
+
+    <div class="hidden waviy" id="welcome">
+      <h1 align="center">❤️</h1>
+      <div>
+
+        <span style="--i:1">සා</span>
+        <span style="--i:2">ද</span>
+        <span style="--i:3">ර</span>
+        <span style="--i:4">යෙ</span>
+        <span style="--i:5">න්</span>
+      </div>
+      <div> <span style="--i:6">පි</span>
+        <span style="--i:7">ළි</span>
+        <span style="--i:8">ග</span>
+        <span style="--i:9">නි</span>
+        <span style="--i:10">මු.</span>
+      </div>
+
+    </div>
 
     <section id="resource" class="hidden">
 
@@ -37,8 +77,6 @@
 
       </div>
     </section>
-    <img src="./images/peocock.svg" class="peocock">
-    <!-- <img src="./images/faculty.jpg" class="faculty"> -->
   </main>
 
 </body>

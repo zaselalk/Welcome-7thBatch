@@ -10,7 +10,7 @@ body {
   background-image: linear-gradient(
       135deg,
       rgb(34, 195, 88, 0.9) 0%,
-      rgb(4, 11, 49, 0.8) 100%
+      rgb(4, 11, 49, 0.99) 100%
     ),
     url("/images/faculty.jpg");
 }
@@ -19,8 +19,8 @@ body {
 }
 
 .peocock {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   bottom: 8%;
   right: 5%;
@@ -30,10 +30,6 @@ body {
 main {
   width: 100%;
   height: 100vh;
-  /* background: rgb(34, 193, 195); */
-  /* background: linear-gradient(135deg, rgb(34, 195, 88) 0%, rgb(4, 11, 49) 100%); */
-  /* background-image: radial-gradient(#007ea7, #007ea7, #4361ee); */
-  /* background-image: radial-gradient(#003153, #fcd04a, #000080); */
   position: relative;
   overflow: hidden;
 }
@@ -41,31 +37,47 @@ main {
 main > h1,
 main > h2 {
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 8vw;
   opacity: 0;
-  text-shadow: 0 0 10px white;
+  text-shadow: 0 0 5px white;
+  text-wrap: nowrap;
 }
 
-main > h2 {
-  animation: text1 linear forwards 3s;
-}
+/* main > h2 {
+  animation: textAnimation1 linear forwards 3s;
+} */
 
 main > h2:nth-of-type(1) {
-  animation-delay: 1s;
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 8s;
 }
 
 main > h2:nth-of-type(2) {
-  animation-delay: 4s;
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 11s;
 }
 
 main > h2:nth-of-type(3) {
-  animation-delay: 7s;
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 14s;
+}
+main > h2:nth-of-type(4) {
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 19s;
+}
+main > h2:nth-of-type(5) {
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 22s;
+}
+main > h2:nth-of-type(6) {
+  animation: textAnimation1 linear forwards 3s;
+  animation-delay: 25s;
 }
 
 main > h1 {
@@ -111,7 +123,7 @@ main > h1 > strong:nth-of-type(3) {
   flex-direction: column;
 }
 
-.resource-item {
+/* .resource-item {
   margin: 0.4rem 0;
   display: flex;
   justify-content: center;
@@ -120,13 +132,36 @@ main > h1 > strong:nth-of-type(3) {
   background-color: #023e8a;
   border-radius: 5px;
   color: aliceblue;
+} */
+
+.resource-item {
+  margin: 0.4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: rgba(
+    2,
+    62,
+    138,
+    0.8
+  ); /* Use rgba for background color with transparency */
+  border-radius: 5px;
+  color: aliceblue;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  transition: background-color 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+.resource-item:hover {
+  background-color: rgba(2, 62, 138, 0.9); /* Darken the background on hover */
 }
 
 .common {
   background-color: #03045e;
 }
 
-@keyframes text1 {
+@keyframes textAnimation1 {
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(2);
@@ -145,20 +180,62 @@ main > h1 > strong:nth-of-type(3) {
   }
 }
 
-@keyframes st1 {
+#container {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  user-select: none;
+}
+
+@keyframes textclip {
   to {
-    transform: translateX(0px);
+    background-position: 200% center;
   }
 }
 
-@keyframes st2 {
-  to {
-    transform: translateY(0px);
-  }
+#welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
 }
 
-@keyframes st3 {
-  to {
-    opacity: 1;
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 2rem;
+}
+.waviy span {
+  font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s ease-in-out;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
   }
 }
