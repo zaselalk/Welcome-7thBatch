@@ -7,4 +7,4 @@ const welcomeSection = document.getElementById("welcome");
 
 setTimeout(() => {
   resourceSection.classList.remove("hidden");
-}, 13000);
+}, 23000);
