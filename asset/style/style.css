@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "4u-amantha";
+  src: url("../fonts/4u-Amantha.ttf") format("truetype");
+}
+
 body {
   background-image: linear-gradient(
       135deg,
@@ -40,11 +45,11 @@ main > h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  /* font-family: "4u-amantha"; */
   text-transform: uppercase;
   font-size: 8vw;
   opacity: 0;
-  text-shadow: 0 0 5px white;
+  text-shadow: 0 0 3px white;
   text-wrap: nowrap;
 }
 
@@ -75,10 +80,20 @@ main > h1 {
   opacity: 1;
 }
 
+.info-text {
+  color: wheat;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #resource {
   width: 100%;
   height: 100vh;
   padding: 20%;
+  animation: fade-in 1s ease-in-out forwards;
 }
 
 .resource-headline {
@@ -143,27 +158,6 @@ main > h1 {
   }
 }
 
-#container {
-  position: absolute;
-  margin: auto;
-  width: 100vw;
-  height: 80pt;
-  top: 0;
-  bottom: 0;
-  filter: url(#threshold) blur(0.6px);
-}
-
-#text1,
-#text2 {
-  position: absolute;
-  width: 100%;
-  display: inline-block;
-  font-family: "Raleway", sans-serif;
-  font-size: 5rem;
-  text-align: center;
-  user-select: none;
-}
-
 @keyframes textclip {
   to {
     background-position: 200% center;
@@ -176,31 +170,6 @@ main > h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-}
-
-.waviy {
-  position: relative;
-  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
-  font-size: 2rem;
-}
-.waviy span {
-  font-family: "Alfa Slab One", cursive;
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  text-transform: uppercase;
-  animation: waviy 1s ease-in-out;
-  animation-delay: calc(0.1s * var(--i));
-}
-@keyframes waviy {
-  0%,
-  40%,
-  100% {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(-20px);
-  }
 }
 
 /* Breaking point that only for min width 728px */
@@ -216,4 +185,152 @@ main > h1 {
   .resource-headline {
     margin-bottom: 10px;
   }
+}
+
+/* Gift Box */
+
+.gift {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  background-color: #e9c46a;
+  animation: vibrate 1.5s ease-in-out infinite;
+}
+
+.gift:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  background-color: #e76f51;
+  left: 62px;
+}
+
+.gift:after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 100px;
+}
+
+input#click {
+  display: none;
+}
+.click {
+  position: absolute;
+  background-color: #e9c46a;
+  width: 170px;
+  height: 40px;
+  top: -40px;
+  left: -10px;
+  transform-origin: bottom left;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.click:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 40px;
+  background-color: #e76f51;
+  left: 69px;
+}
+
+.click:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 0;
+  border-bottom: 30px solid #e76f51;
+  border-top: 30px solid #e76f51;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(-90deg);
+  left: 65px;
+  top: -47px;
+}
+
+.wishes {
+  position: absolute;
+  transition: 0.5s;
+  color: #333;
+  font-size: 37px;
+  text-align: center;
+  z-index: -1;
+  left: 5px;
+}
+
+.gift-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.gift-section-hide {
+  animation: disapear 1s ease-in-out forwards;
+}
+
+.gift-section:before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 90px;
+  left: -10px;
+}
+
+.gift-open {
+  transform: rotate(-110deg) scaleX(0.85);
+}
+
+@keyframes vibrate {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: scale(1.1) rotate(2deg);
+  }
+  30% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#click:checked ~ .sparkles {
+  display: block;
 }
